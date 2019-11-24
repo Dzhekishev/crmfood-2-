@@ -37,9 +37,9 @@ class StatusesView(generics.ListCreateAPIView):
 	queryset=Statuses.objects.all()
 	serializer_class=Statuses_Serializers
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-class ServicepercentageView(generics.ListCreateAPIView):
-	queryset=Servicepercentage.objects.all()
-	serializer_class=Servicepercentage_Serializers
+class ServicePercentageView(generics.ListCreateAPIView):
+	queryset=ServicePercentage.objects.all()
+	serializer_class=ServicePercentage_Serializers
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 class MealsView(generics.ListCreateAPIView):
 	queryset=Meals.objects.all()
@@ -62,45 +62,45 @@ class Meals_to_orderView(generics.ListCreateAPIView):
 
 
 
-class Tabledetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Tabledetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Table.objects.all()
 	serializer_class=Table_Serializers
 
-class Rolesdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Rolesdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Roles.objects.all()
 	serializer_class=Roles_Serializers
 
 
-class Departmentsdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Departmentsdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Departments.objects.all()
 	serializer_class=Departments_Serializers
 
 
-class Usersdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Usersdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Users.objects.all()
 	serializer_class=Users_Serializers
 
-class Meal_Categoriesdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Meal_Categoriesdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Meal_Categories.objects.all()
 	serializer_class=MealCategories_Serializers
 
-class Statusesdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Statusesdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Statuses.objects.all()
 	serializer_class=Statuses_Serializers
 
-class Mealsdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Mealsdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Meals.objects.all()
 	serializer_class=Meals_Serializers
 
-class Ordersdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Ordersdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Orders.objects.all()
 	serializer_class=Orders_Serializers
 
-class Checksdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Checksdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Checks.objects.all()
 	serializer_class=Checks_Serializers
 
-class Meals_to_orderdetails(generics.RetrieveUpdateDestroyAPIViewCreateAPIView):
+class Meals_to_orderdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Meals_to_order.objects.all()
 	serializer_class=Meals_to_order_Serializers
 

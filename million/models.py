@@ -15,13 +15,13 @@ class Users(models.Model):
 	name=models.CharField('name',max_length=20,default='')
 	surname=models.CharField('surname',max_length=20,default='')
 	email=models.CharField('email',max_length=20,default='')
-	roleid=models.PositiveIntegerField('roleid',default='')
+	roleid=models.ForeignKey(Roles,on_delete=models.CASCADE, default='')
 	phone=models.PositiveIntegerField('phone',default='')
 
 
 class Meal_Categories(models.Model):
 	name=models.CharField('place of concert',max_length=20,default='')
-	departmentid=ManyToManyField(Departments)	
+	departmentid=models.ForeignKey(Departments,on_delete=models.CASCADE, default='')	
 
 
 class Statuses(models.Model):
@@ -32,23 +32,23 @@ class ServicePercentage(models.Model):
 
 class Meals(models.Model):
 	name=models.CharField('name',max_length=20,default='')
-	categoryid=ManyToManyField(Meal Categories)
+	categoryid=models.ForeignKey(Meal_Categories,on_delete=models.CASCADE, default='')
 	price=models.PositiveIntegerField('price',default='')
 	description=models.CharField('description',max_length=20,default='')
 
 
 class Orders(models.Model):
-	tableid=models.PositiveIntegerField('tableid',default='')
-	meals=ManyToManyField(Meals)
+	tableid=models.ForeignKey(Table,on_delete=models.CASCADE, default='')
+	meals=models.ManyToManyField(Meals)
 
 class Checks(models.Model):
-	orderid=models.PositiveIntegerField('orderid',default='')
+	orderid=models.ForeignKey(Orders,on_delete=models.CASCADE, default='')
 	date=models.DateField('date',max_length=20,default='')
 	servicefee=models.PositiveIntegerField('servicefee',default='')
 	totalsum=models.PositiveIntegerField('totalsum',default='')
-	meals=ManyToManyField(Meals)
+	meals=models.ManyToManyField(Meals)
 
 class Meals_to_order(models.Model):
-	orderid=models.PositiveIntegerField('orderd',default='')
-	meals=ManyToManyField(Meals)
+	orderid=models.ForeignKey(Orders,on_delete=models.CASCADE, default='')
+	meals=models.ManyToManyField(Meals)
 
