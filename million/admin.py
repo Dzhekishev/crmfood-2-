@@ -10,9 +10,9 @@ admin.site.register(Meal_Categories)
 admin.site.register(Statuses)
 admin.site.register(ServicePercentage)
 admin.site.register(Meals)
-admin.site.register(Orders)
+'''admin.site.register(Orders)
 admin.site.register(Checks)
 admin.site.register(Meals_to_order)
-
+'''
 
 

@@ -10,7 +10,34 @@ from million.serializers import *
 from django.contrib.auth.models import User
 from million.serializers import UserSerializers
 from rest_framework import permissions
+from rest_framework import viewsets,status
+from rest_framework.response import Response
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
+'''class TableView(viewsets.ModelViewSet):
+	queryset=Table.objects.all()
+	serializer_class=Table_Serializers
+class RolesView(viewsets.ModelViewSet):
+	queryset=Roles.objects.all()
+	serializer_class=Roles_Serializers
+class DepartmentsView(viewsets.ModelViewSet):
+	queryset=Departments.objects.all()
+	serializer_class=Departments_Serializers
+class UsersView(viewsets.ModelViewSet):
+	queryset=Users.objects.all()
+	serializer_class=Users_Serializers
+class Meal_Categories(viewsets.ModelViewSet):
+	queryset=Meal_Categories.objects.all()
+	serializer_class=MealCategories_Serializers
+class StatusesView(viewsets.ModelViewSet):
+	queryset=Statuses.objects.all()
+	serializer_class=Statuses_Serializers
+class ServicePercentageView(viewsets.ModelViewSet):
+	queryset=ServicePercentage.objects.all()
+	serializer_class=ServicePercentage_Serializers
+class MealsView(viewsets.ModelViewSet):
+	queryset=Meals.objects.all()
+	serializer_class=Meals_Serializers'''
 class TableView(generics.ListCreateAPIView):
 	queryset=Table.objects.all()
 	serializer_class=Table_Serializers
@@ -41,11 +68,12 @@ class ServicePercentageView(generics.ListCreateAPIView):
 	queryset=ServicePercentage.objects.all()
 	serializer_class=ServicePercentage_Serializers
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
 class MealsView(generics.ListCreateAPIView):
 	queryset=Meals.objects.all()
 	serializer_class=Meals_Serializers
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-class OrdersView(generics.ListCreateAPIView):
+'''class OrdersView(generics.ListCreateAPIView):
 	queryset=Orders.objects.all()
 	serializer_class=Orders_Serializers
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -59,7 +87,7 @@ class Meals_to_orderView(generics.ListCreateAPIView):
 	permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
 
-
+'''
 
 
 class Tabledetails(generics.RetrieveUpdateDestroyAPIView):
@@ -88,11 +116,12 @@ class Statusesdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Statuses.objects.all()
 	serializer_class=Statuses_Serializers
 
+
 class Mealsdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Meals.objects.all()
 	serializer_class=Meals_Serializers
 
-class Ordersdetails(generics.RetrieveUpdateDestroyAPIView):
+'''class Ordersdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Orders.objects.all()
 	serializer_class=Orders_Serializers
 
@@ -103,7 +132,7 @@ class Checksdetails(generics.RetrieveUpdateDestroyAPIView):
 class Meals_to_orderdetails(generics.RetrieveUpdateDestroyAPIView):
 	queryset=Meals_to_order.objects.all()
 	serializer_class=Meals_to_order_Serializers
-
+'''
 
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()

@@ -16,7 +16,7 @@ class Departments_Serializers(serializers.ModelSerializer):
 class Users_Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=Users
-		fields=('id','name','count','style','date')
+		fields=('id','name','surname','login','password','email','roleid','date','phone')
 class MealCategories_Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=Meal_Categories
@@ -33,7 +33,7 @@ class Meals_Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=Meals
 		fields=('id','name','categoryid','price','description')
-class Orders_Serializers(serializers.ModelSerializer):
+'''class Orders_Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=Orders
 		fields=('id','tableid','meals')
@@ -44,7 +44,7 @@ class Checks_Serializers(serializers.ModelSerializer):
 class Meals_to_order_Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=Meals_to_order
-		fields=('oderid','meals')
+		fields=('oderid','meals')'''
 class UserSerializers(serializers.ModelSerializer):
 	Table = serializers.PrimaryKeyRelatedField(many=True, queryset=Table.objects.all())
 	class Meta:
@@ -75,12 +75,13 @@ class User5Serializers(serializers.ModelSerializer):
 	class Meta:
 		model=User
 		fields=('id','username','Statuses')
-class User6Serializers(serializers.ModelSerializer):
+
+class User7Serializers(serializers.ModelSerializer):
 	Meals = serializers.PrimaryKeyRelatedField(many=True, queryset=Meals.objects.all())
 	class Meta:
 		model=User
 		fields=('id','username','Meals')
-class User7Serializers(serializers.ModelSerializer):
+'''class User7Serializers(serializers.ModelSerializer):
 	Orders = serializers.PrimaryKeyRelatedField(many=True, queryset=Orders.objects.all())
 	class Meta:
 		model=User
@@ -96,3 +97,4 @@ class User9Serializers(serializers.ModelSerializer):
 		model=User
 		fields=('id','username','Meals_to_order')
 
+'''
